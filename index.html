@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulários</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body style="background-color: #111111; color: #b4b4b4">
+    <form>
+      <!-- action: Para onde os dados serão enviados/submetidos -->
+      <!-- metodo de envio, sendo POST/GET
+        POST: "Esconde os dados"
+        GET: aparece os dados na URL (default)-->
+
+      <fieldset>
+        <!-- Agrupamento de campos -->
+        <legend>Contato</legend>
+
+        <label for="name">Nome</label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          list="namesList"
+          placeholder="Vitor Natario"
+          autofocus
+          autocomplete="off"
+          required
+          minlength="3"
+          maxlength="20"
+        />
+
+        <label for="password" style="margin-left: 30px">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Coloque sua senha"
+          required
+          minlength="4"
+          maxlength="20"
+          pattern="[0-9a-fA-f]{4,8}"
+          title="Coloque HEX no mínimo 4 caracteres e no máximo 8 caracteres"
+          autocomplete="off"
+        />
+
+        <label style="margin-left: 30px">
+          Email
+          <input type="email" name="email" id="email" required />
+        </label>
+
+        <datalist id="namesList">
+          <option value="Icaro"></option>
+          <option value="Sofia"></option>
+          <option value="Sara"></option>
+          <option value="Diego"></option>
+        </datalist>
+      </fieldset>
+      <br />
+
+      <button type="submit">Enviar</button>
+
+      <button type="reset" style="margin-left: 30px">Reset</button>
+    </form>
+
+    <form
+      style="margin-top: 100px; width: 400px"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <fieldset>
+        <legend>File</legend>
+
+        <div style="text-align: center">
+          <label for="file">File: </label>
+          <input type="file" id="file" accept="image/*, .pdf" multiple />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
